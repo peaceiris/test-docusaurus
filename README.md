@@ -7,3 +7,8 @@ This project was created by `npx @docusaurus/init@next init`.
 ```sh
 npx @docusaurus/init@next init test-docusaurus classic
 ```
+
+```
+# update deps
+yarn upgrade
+```
