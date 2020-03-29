@@ -1,2 +1,3 @@
-# test-docusaurus
-GitHub Pages and GitHub Actions example for facebook/docusaurus
+## GitHub Actions and Pages Example for docusaurus
+
+An example project for the [GitHub Actions for GitHub Pages](https://github.com/peaceiris/actions-gh-pages)
