@@ -1,6 +1,6 @@
 module.exports = {
-  title: 'My Site',
-  tagline: 'The tagline of my site',
+  title: 'GitHub Actions, Pages, and Docusaurus',
+  tagline: 'A Docusaurus example project for building with GitHub Actions and deploying to GitHub Pages.',
   url: 'https://test-docusaurus.peaceiris.com',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
