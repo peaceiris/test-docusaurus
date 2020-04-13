@@ -5,7 +5,7 @@ An example project for the [GitHub Actions for GitHub Pages](https://github.com/
 This project was created by `npx @docusaurus/init@next init`.
 
 ```sh
-npx @docusaurus/init@next init test-docusaurus classic
+npx @docusaurus/init@next init website classic
 ```
 
 ```
