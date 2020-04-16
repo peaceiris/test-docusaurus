@@ -5,6 +5,10 @@ on:
     branches:
       - master
 
+defaults:
+  run:
+    working-directory: ./website
+
 jobs:
   deploy:
     runs-on: ubuntu-18.04
@@ -29,15 +33,12 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - run: yarn install
-        working-directory: ./website
-
       - run: yarn build
-        working-directory: ./website
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           # deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./website/build
+          publish_dir: ./build
           cname: 'test-docusaurus.peaceiris.com'
