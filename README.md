@@ -2,6 +2,8 @@
 
 An example project for the [GitHub Actions for GitHub Pages](https://github.com/peaceiris/actions-gh-pages)
 
+Deploy Log: https://github.com/peaceiris/test-docusaurus/commits/gh-pages
+
 This project was created by `npx @docusaurus/init@next init`.
 
 ```sh
