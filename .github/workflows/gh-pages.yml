@@ -7,7 +7,7 @@ on:
 
 defaults:
   run:
-    working-directory: ./website
+    working-directory: website
 
 jobs:
   deploy:
@@ -40,5 +40,5 @@ jobs:
         with:
           # deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
+          publish_dir: ./website/build
           cname: 'test-docusaurus.peaceiris.com'
