@@ -71,7 +71,7 @@ function Home() {
                 'button button--outline button--secondary button--lg',
                 styles.getStarted,
               )}
-              to=https://github.com/peaceiris/actions-gh-pages>
+              to='https://github.com/peaceiris/actions-gh-pages'>
               Go to Repository
             </Link>
           </div>
