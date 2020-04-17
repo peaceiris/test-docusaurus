@@ -71,8 +71,8 @@ function Home() {
                 'button button--outline button--secondary button--lg',
                 styles.getStarted,
               )}
-              to={useBaseUrl('docs/doc1')}>
-              Get Started
+              to={https://github.com/peaceiris/actions-gh-pages}>
+              Go to Repository
             </Link>
           </div>
         </div>
