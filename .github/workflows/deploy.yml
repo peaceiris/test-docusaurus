@@ -10,9 +10,12 @@ on:
       - '.github/workflows/deploy.yml'
       - 'website/**'
 
+env:
+  WORKDIR: website
+
 defaults:
   run:
-    working-directory: website
+    working-directory: ${{ env.WORKDIR }}
 
 jobs:
   deploy:
@@ -33,9 +36,9 @@ jobs:
         uses: actions/cache@v1
         with:
           path: ${{ steps.yarn-cache.outputs.dir }}
-          key: ${{ runner.os }}-website-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-${{ env.WORKDIR }}-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-website-
+            ${{ runner.os }}-${{ env.WORKDIR }}-
 
       - run: yarn install
       - run: yarn build
@@ -44,5 +47,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./website/build
+          publish_dir: ./${{ env.WORKDIR }}/build
           cname: 'test-docusaurus.peaceiris.com'
