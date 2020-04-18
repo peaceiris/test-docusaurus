@@ -15,7 +15,7 @@ env:
 
 defaults:
   run:
-    working-directory: ${{ env.WORKDIR }}
+    working-directory: website
 
 jobs:
   deploy:
