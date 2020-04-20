@@ -10,6 +10,9 @@ on:
       - '.github/workflows/deploy.yml'
       - 'website/**'
 
+env:
+  WORKDIR: website
+
 defaults:
   run:
     working-directory: website
@@ -37,10 +40,6 @@ jobs:
           RUNNER_CONTEXT: ${{ toJson(runner) }}
         run: echo "$RUNNER_CONTEXT"
 
-      - name: Get working-directory
-        id: workdir
-        run: echo "::set-output name=workdir::$(pwd)"
-
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
@@ -54,9 +53,9 @@ jobs:
         uses: actions/cache@v1
         with:
           path: ${{ steps.yarn-cache.outputs.dir }}
-          key: ${{ runner.os }}-${{ steps.workdir.outputs.workdir }}-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-${{ env.WORKDIR }}-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-${{ steps.workdir.outputs.workdir }}-
+            ${{ runner.os }}-${{ env.WORKDIR }}-
 
       - run: yarn install
       - run: yarn build
@@ -65,5 +64,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./${{ steps.workdir.outputs.workdir }}/build
+          publish_dir: ./${{ env.WORKDIR }}/build
           cname: 'test-docusaurus.peaceiris.com'
