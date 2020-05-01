@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'GitHub Actions, Pages, and Docusaurus',
+  title: 'GitHub Actions for GitHub Pages and Docusaurus',
   tagline: 'A Docusaurus example project for building with GitHub Actions and deploying to GitHub Pages.',
   url: 'https://test-docusaurus.peaceiris.com',
   baseUrl: '/',
