@@ -56,7 +56,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-${{ env.WORKDIR }}-
 
-      - run: yarn install
+      - run: yarn install --frozen-lockfile
       - run: yarn build
 
       - name: Deploy
